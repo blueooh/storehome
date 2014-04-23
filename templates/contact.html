@@ -1,0 +1,40 @@
+{% extends "main_page.html" %}
+
+{% block script %}
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script> 
+  function initialize() { 
+    var myLatlng = new google.maps.LatLng(35.9492583, 126.9670134); 
+    var mapOptions = { 
+          zoom: 17, 
+          center: myLatlng, 
+          mapTypeId: google.maps.MapTypeId.ROADMAP 
+    } 
+    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
+    var marker = new google.maps.Marker({ 
+            position: myLatlng, 
+            map: map, 
+            title: "동부시장 만나순대" 
+    }   );
+    var infowindow = new google.maps.InfoWindow( 
+          { 
+            content: "<h3>만나순대는 동부시장 내 있습니다.</h3>", 
+            maxWidth: 300 
+          } 
+    ); 
+    google.maps.event.addListener(marker, 'click', function() { 
+        infowindow.open(map, marker); 
+    }); 
+  } 
+  initialize();
+</script> 
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 1px 1px 1px">
+    <div id="map_canvas" style="width:500px; height:300px;"></div> 
+    <h3>동부시장 만나순대</h3>
+    <h3><small>동북초등학교 건너편에 위치하고 있습니다.</small></h3>
+    <h3><small>전화번호 063-858-3748</small></h3>
+</div>
+{% endblock %}

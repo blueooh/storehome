@@ -1,0 +1,38 @@
+{% extends "main_page.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="masthead">
+        <div class="jumbotron">
+          <h1>Taste Is Good!</h1>
+          <p class="lead">놀라운 맛, 놀라운 양, 놀라운 만나순대를 경험하실 수 있습니다.</p>
+          <!--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>-->
+        </div>
+        <div class="row">
+
+          {% if menu_list %}
+          {% for menu in menu_list %}
+            <div class="col-xs-6 col-md-3 col-sm-3">
+              <a href="/intro/favorate" class="thumbnail">
+                <img src="/static/img/{{ menu.pic.url }}" width="5000px" height="500">
+              </a>
+            </div>
+          {% endfor %}
+          {% endif %}
+
+        </div>
+    </div>
+
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div style="margin: 0 auto; width: 390px; padding: 50px 1px 1px 1px;">
+    <div class="fb-like" data-href="http://www.taste-good.com/" data-width="450" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+</div>
+{% endblock %}
