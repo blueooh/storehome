@@ -140,42 +140,29 @@ if(!String.prototype.formatNum) {
 	var defaults_extended = {
 		first_day: 2,
 		holidays:  {
-			// January 1
-			'01-01':  "New Year's Day",
-			// Third (+3*) Monday (1) in January (01)
-			'01+3*1': "Birthday of Dr. Martin Luther King, Jr.",
-			// Third (+3*) Monday (1) in February (02)
-			'02+3*1': "Washington's Birthday",
-			// Last (-1*) Monday (1) in May (05)
-			'05-1*1': "Memorial Day",
-			// July 4
-			'04-07':  "Independence Day",
-			// First (+1*) Monday (1) in September (09)
-			'09+1*1': "Labor Day",
-			// Second (+2*) Monday (1) in October (10)
-			'10+2*1': "Columbus Day",
-			// November 11
-			'11-11':  "Veterans Day",
-			// Fourth (+4*) Thursday (4) in November (11)
-			'11+4*4': "Thanksgiving Day",
-			// December 25
-			'25-12':  "Christmas"
+            '01-01': '신정',
+	 	    '01-03': '삼일절',
+	 	    '05-05': '어린이날',
+	 	    '06-06': '현충일',
+	 	    '15-08': '광복절',
+	 	    '03-10': '개천절',
+	 	    '25-12': '크리스마스',
 		}
 	};
 
 	var strings = {
-		error_noview:     'Calendar: View {0} not found',
-		error_dateformat: 'Calendar: Wrong date format {0}. Should be either "now" or "yyyy-mm-dd"',
-		error_loadurl:    'Calendar: Event URL is not set',
-		error_where:      'Calendar: Wrong navigation direction {0}. Can be only "next" or "prev" or "today"',
-		error_timedevide: 'Calendar: Time split parameter should divide 60 without decimals. Something like 10, 15, 30',
+        error_noview: '캘린더: {0} 볼 수 없습니다',
+	    error_dateformat: '캘린더: 잘못된 날짜 형식 {0}. "now" 또는 "yyyy-mm-dd" 형식이어야 합니다',
+	    error_loadurl: '캘린더: 이벤트 URL이 설정되지 않았습니다',
+	    error_where: '캘린더: 잘못된 탐색 방향 {0}. 오직 "next" 또는 "prev" 또는 "today"만 가능합니다',
+	    error_timedevide: '캘린더: 시간 분할 매개변수는 소수 없이 60을 분할합니다. 10, 15, 30과 같이 합니다',
 
-		no_events_in_day: 'No events in this day.',
+	    no_events_in_day: '이 날에 이벤트가 없습니다.',
 
-		title_year:  '{0}',
-		title_month: '{0} {1}',
-	    title_week: '{1}년 {0}째 주',
-		title_day:   '{0} {1} {2}, {3}',
+	    title_year: '{0}년',
+	    title_month: '{1}년 {0}',
+	    title_week: '{1}년 {0}째주',
+	    title_day: '{3}년 {2} {1}일 {0}',
 
          week:'주',
          all_day:     '하루 종일',
