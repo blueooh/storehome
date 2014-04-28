@@ -4,25 +4,25 @@ import json
 
 def home(request):
     m = Menu.objects.filter(distiction=1)[:4]
-    return render_to_response('index.html', {'active': 'Home', 'menu_list': m})
+    return render_to_response('index.html', {'view': 'home', 'menu_list': m})
 
 def menu(request):
     m = Menu.objects.all()
-    return render_to_response('menu_list.html', {'active': 'Menu', 'menu_list': m})
+    return render_to_response('menu_list.html', {'view': 'menu', 'menu_list': m})
 
 def favorate(request):
     m = Menu.objects.filter(distiction=1)
-    return render_to_response('menu_list.html', {'active': 'Menu', 'menu_list': m})
+    return render_to_response('menu_list.html', {'view': 'menu', 'menu_list': m})
 
 def reservation_menu(request):
     m = Menu.objects.filter(distiction=2)
-    return render_to_response('menu_list.html', {'active': 'Menu', 'menu_list': m})
+    return render_to_response('menu_list.html', {'view': 'menu', 'menu_list': m})
 
 def contact(request):
-    return render_to_response('contact.html', {'active': 'Contact'})
+    return render_to_response('contact.html', {'view': 'contact'})
 
 def schedule(request):
-    return render_to_response('schedule.html', {'active': 'Schedule'})
+    return render_to_response('schedule.html', {'view': 'schedule'})
 
 def schedule_events(request):
     sche = ScheduleEvents.objects.all()
